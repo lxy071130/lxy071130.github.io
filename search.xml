@@ -48,17 +48,27 @@
 <h2 id="序言：配置环境"><a href="#序言：配置环境" class="headerlink" title="序言：配置环境"></a>序言：配置环境</h2><p>mac用户建议先安装<a href="www.brew.sh">homebrew</a>.<br>ps：如果国内网络不好可以用大佬魔改的 <a href="https://gitee.com/cunkai/HomebrewCN">homebrew-cn</a>.<br>安装完成后终端输入<code>brew -v</code>, 如果返回”homebrew xxx-xxx”则安装成功<br>这里假设你已经安装了brew并且工作正常：<br>终端输入<code>brew install git &amp;&amp; brew install node</code><br>再然后安装hexo和deployer：<br><code>npm install hexo-cli --save</code><br><code>npm install hexo-deployer-git</code><br>这样开始之前的环境就算配置好了。</p>
 <h2 id="第一步：配置hexo"><a href="#第一步：配置hexo" class="headerlink" title="第一步：配置hexo"></a>第一步：配置hexo</h2><p>1.在当前位置（也可以是你喜欢的位置）下创建一个空文件夹并进入：<br><code>mkdir blog &amp;&amp; cd blog</code><br>2.运行 ：<br>     <code>hexo init</code><br>     <code>npm install</code><br>     如果有网络问题只能等了，或者自行百度<br>3. 然后运行<code>hexo g</code>生成一些文件，再运行<code>hexo s</code>进行本地部署，看见 <code>hexo is running at https://localhost:4000</code>就算配置成功。<br>4. 打开浏览器访问<a href="https://localhost:4000/">https://localhost:4000</a><br>或者<a href="https://localhost:4000/">点我</a>,如果看见了hexo四个大字，就算成功。<br>ps:如果显示localhost未响应可以尝试<code>hexo s -p 5000</code><br>然后访问<a href="https://localhost:5000/">这里</a><br>应该就可以了。<br>到这里hexo的配置就完成了。</p>
 <h2 id="第二步：配置ssh"><a href="#第二步：配置ssh" class="headerlink" title="第二步：配置ssh"></a>第二步：配置ssh</h2><ol>
-<li>首先你需要一个GitHub账户，如果没有，可以参考<a href="https://cloud.tencent.com/developer/article/1487508">这个教程</a>，写的很全面，顺便把以后要用到的操作都讲到了，注意用户名不要太复杂，以后不好弄。  </li>
-<li>然后运行这条命令生成一个ssh key:<br><code>ssh keygen -t rsa -C &quot;你注册GitHub用的邮箱&quot;</code><br>然后一路回车<br>然后用文本编辑器打开这个文件（我用的是<a href="https://vim.org/">vim</a>):<br><code>vi ~/.ssh/id_rsa.pub</code><br>复制里面的<strong>全部</strong>内容  </li>
-<li>然后点击右上角-<code>settings</code>-<code>ssh and gpg keys</code>，单击右上角<code>new ssh key</code>，title随便写一个，粘贴之前复制的<code>id_rsa.pub</code>里的内容到下面的框框里，再点<code>add ssh key</code>添加。</li>
-<li>终端执行<br><code>ssh -T git@github.com</code><br>如果返回“hi xxx! you’ve successfully…..”则说明ssh配置成功。<br>第三步：配置git</li>
+<li><p>首先你需要一个GitHub账户，如果没有，可以参考<a href="https://cloud.tencent.com/developer/article/1487508">这个教程</a>，写的很全面，顺便把以后要用到的操作都讲到了，注意用户名不要太复杂，以后不好弄。  </p>
+</li>
+<li><p>然后运行这条命令生成一个ssh key:<br><code>ssh keygen -t rsa -C &quot;你注册GitHub用的邮箱&quot;</code><br>然后一路回车<br>然后用文本编辑器打开这个文件（我用的是<a href="https://vim.org/">vim</a>):<br><code>vi ~/.ssh/id_rsa.pub</code><br>复制里面的<strong>全部</strong>内容  </p>
+</li>
+<li><p>然后点击右上角-<code>settings</code>-<code>ssh and gpg keys</code>，单击右上角<code>new ssh key</code>，title随便写一个，粘贴之前复制的<code>id_rsa.pub</code>里的内容到下面的框框里，再点<code>add ssh key</code>添加。</p>
+</li>
+<li><p>终端执行<br><code>ssh -T git@github.com</code><br>如果返回“hi xxx! you’ve successfully…..”则说明ssh配置成功。</p>
+<p>第三步：配置git</p>
+</li>
 </ol>
 <hr>
-<p><strong>注意：这一步骤的所有操作基本都需要看命（连接GitHub）！！！</strong>1.  1.  登录你的GitHub账号，这个不用我说。<br>2.  登录以后新建一个仓库，仓库名为<code>你的用户名.github.io</code><br>3. 打开终端，运行以下命令：  <code>git config --global user.name &quot;你的  GitHub用户名&quot;</code> <code>git config --global user.email &quot;你注册GitHub用的邮箱&quot;</code>  </p>
+<p><strong>注意：这一步骤的所有操作基本都需要看命（连接GitHub）！！！</strong>   </p>
+<ol>
+<li> 登录你的GitHub账号，这个不用我说。  </li>
+<li> 登录以后新建一个仓库，仓库名为<code>你的用户名.github.io</code>   </li>
+<li>打开终端，运行以下命令：  <code>git config --global user.name &quot;你的  GitHub用户名&quot;</code> <code>git config --global user.email &quot;你注册GitHub用的邮箱&quot;</code>  </li>
+</ol>
 <p>这样git就算配置好了。  </p>
 <h2 id="第四步：配置hexo-deployer"><a href="#第四步：配置hexo-deployer" class="headerlink" title="第四步：配置hexo-deployer"></a>第四步：配置hexo-deployer</h2><p><strong>注意：这一步骤的所有操作基本都需要看命（连接GitHub）！！！</strong></p>
 <ol>
-<li>用文本编辑器打开博客的配置文件：<br> <code>vi ~/blog/_config.yml</code><br> 编辑文件中：<br> deploy:<br> type: git<br> repository: <a href="mailto:&#x67;&#x69;&#116;&#x40;&#x67;&#x69;&#x74;&#104;&#117;&#98;&#x2e;&#x63;&#x6f;&#109;">&#x67;&#x69;&#116;&#x40;&#x67;&#x69;&#x74;&#104;&#117;&#98;&#x2e;&#x63;&#x6f;&#109;</a>:你的GitHub用户名/你的GitHub用户名.github.io.git  </li>
+<li>用文本编辑器打开博客的配置文件：<br> <code>vi ~/blog/_config.yml</code><br> 编辑文件中：<br> deploy:<br> type: git<br> repository: <a href="mailto:&#x67;&#105;&#x74;&#x40;&#x67;&#105;&#x74;&#x68;&#x75;&#98;&#46;&#x63;&#x6f;&#x6d;">&#x67;&#105;&#x74;&#x40;&#x67;&#105;&#x74;&#x68;&#x75;&#98;&#46;&#x63;&#x6f;&#x6d;</a>:你的GitHub用户名/你的GitHub用户名.github.io.git  </li>
 <li>接下来就是最重要的一步了，在blog目录下，执行<code>hexo d</code>！</li>
 <li>到这里博客的搭建和部署基本完成了，几乎不需要维护。</li>
 </ol>
