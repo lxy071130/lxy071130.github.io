@@ -68,7 +68,7 @@
 <p>这样git就算配置好了。  </p>
 <h2 id="第四步：配置hexo-deployer"><a href="#第四步：配置hexo-deployer" class="headerlink" title="第四步：配置hexo-deployer"></a>第四步：配置hexo-deployer</h2><p><strong>注意：这一步骤的所有操作基本都需要看命（连接GitHub）！！！</strong></p>
 <ol>
-<li>用文本编辑器打开博客的配置文件：<br> <code>vi ~/blog/_config.yml</code><br> 编辑文件中：<br> deploy:<br> type: git<br> repository: <a href="mailto:&#x67;&#105;&#x74;&#x40;&#x67;&#105;&#x74;&#x68;&#x75;&#98;&#46;&#x63;&#x6f;&#x6d;">&#x67;&#105;&#x74;&#x40;&#x67;&#105;&#x74;&#x68;&#x75;&#98;&#46;&#x63;&#x6f;&#x6d;</a>:你的GitHub用户名/你的GitHub用户名.github.io.git  </li>
+<li>用文本编辑器打开博客的配置文件：<br> <code>vi ~/blog/_config.yml</code><br> 编辑文件中：<br> deploy:<br> type: git<br> repository: <a href="mailto:&#x67;&#x69;&#116;&#64;&#x67;&#105;&#x74;&#104;&#x75;&#x62;&#46;&#99;&#111;&#x6d;">&#x67;&#x69;&#116;&#64;&#x67;&#105;&#x74;&#104;&#x75;&#x62;&#46;&#99;&#111;&#x6d;</a>:你的GitHub用户名/你的GitHub用户名.github.io.git  </li>
 <li>接下来就是最重要的一步了，在blog目录下，执行<code>hexo d</code>！</li>
 <li>到这里博客的搭建和部署基本完成了，几乎不需要维护。</li>
 </ol>
